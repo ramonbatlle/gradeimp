@@ -1,0 +1,36 @@
+body {
+  width: 280px;
+  margin: 0;
+  padding: 14px;
+  background: #fff;
+  color: #1f1f1f;
+  font: 13px/1.4 sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+strong {
+  font-size: 16px;
+}
+
+p {
+  margin: 12px 0;
+}
+
+footer {
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+a {
+  color: #0b57d0;
+}
+
+.secundari {
+  color: #444746;
+  font-size: 12px;
+}

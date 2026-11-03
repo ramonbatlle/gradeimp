@@ -1,0 +1,22 @@
+{
+  "name": {
+    "message": "GradeImp"
+  },
+  "description": {
+    "message": "Enganxa notes des d'Excel o Sheets i les escriu com a esborrany a la tasca de Classroom oberta."
+  },
+  "ajuda": {
+    "message": "Obre una tasca a Classroom, ves a «Treball de l'alumne» i prem «Importa notes», a la dreta de la pàgina."
+  },
+  "credit": {
+    "message": "Creat per Ramon Batlle"
+  },
+  "versio": {
+    "message": "Versió $VERSIO$",
+    "placeholders": {
+      "versio": {
+        "content": "$1"
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+/* Tot penja de #gradeimp per no afectar la pàgina de Classroom. */
+#gradeimp {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+  color: #1f1f1f;
+  font: 14px sans-serif;
+}
+
+#gradeimp button {
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+#gradeimp button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+#gradeimp .gi-pestanya {
+  padding: 12px 6px;
+  border: 1px solid #0b57d0;
+  border-radius: 0 12px 12px 0;
+  background: #0b57d0;
+  box-shadow: 0 2px 6px #0004;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
+#gradeimp .gi-panell {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 640px;
+  max-width: calc(100vw - 60px);
+  max-height: 88vh;
+  margin-right: 8px;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid #c4c7c5;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 16px #0004;
+}
+
+#gradeimp .gi-panell.gi-visible {
+  display: flex;
+}
+
+#gradeimp .gi-capcalera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#gradeimp .gi-titol {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#gradeimp .gi-titol svg {
+  flex: none;
+}
+
+#gradeimp .gi-tancar {
+  padding: 2px 6px;
+  border: 0;
+  background: none;
+  color: #444746;
+  font-size: 20px;
+  line-height: 1;
+}
+
+#gradeimp .gi-ajuda {
+  color: #444746;
+  font-size: 12px;
+}
+
+#gradeimp .gi-ajuda summary {
+  width: max-content;
+  cursor: pointer;
+}
+
+#gradeimp .gi-ajuda div {
+  margin-top: 4px;
+}
+
+#gradeimp .gi-graella {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#gradeimp .gi-graella-taula {
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid #c4c7c5;
+  border-radius: 6px;
+}
+
+#gradeimp table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#gradeimp th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 3px;
+  border-bottom: 1px solid #c4c7c5;
+  background: #f0f4f9;
+  font-weight: 400;
+  text-align: left;
+}
+
+#gradeimp th select {
+  width: 100%;
+  font: 12px sans-serif;
+}
+
+#gradeimp .gi-columna-estat {
+  min-width: 130px;
+  padding-left: 8px;
+  font-size: 12px;
+}
+
+#gradeimp td {
+  padding: 0;
+  border-right: 1px solid #e8eaed;
+  border-bottom: 1px solid #e8eaed;
+}
+
+#gradeimp td.gi-estat {
+  padding: 3px 8px;
+  border-right: 0;
+  font-size: 12px;
+}
+
+#gradeimp .gi-camp {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 56px;
+  padding: 5px 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: 13px sans-serif;
+}
+
+#gradeimp .gi-camp-nom {
+  min-width: 100px;
+}
+
+#gradeimp .gi-camp-capcalera {
+  background: #f0f4f9;
+  font-weight: 500;
+}
+
+#gradeimp tr.gi-fila-ok { color: #146c2e; }
+#gradeimp tr.gi-fila-omesa { color: #444746; }
+#gradeimp tr.gi-fila-error { color: #b3261e; }
+#gradeimp tr.gi-fila-feta { color: #0b57d0; }
+#gradeimp tr.gi-fila-avis { color: #b26a00; }
+
+#gradeimp .gi-opcio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+#gradeimp .gi-accions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#gradeimp .gi-boto {
+  padding: 8px 12px;
+  border: 1px solid #747775;
+  border-radius: 18px;
+  background: #fff;
+  color: #0b57d0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#gradeimp .gi-boto-principal {
+  border-color: #0b57d0;
+  background: #0b57d0;
+  color: #fff;
+}
+
+#gradeimp .gi-boto-perill {
+  flex: 0 1 150px;
+  margin-left: auto;
+  border-color: #b3261e;
+  color: #b3261e;
+}
+
+#gradeimp .gi-grup-copiar {
+  position: relative;
+}
+
+#gradeimp .gi-menu {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 0;
+  z-index: 2;
+  display: none;
+  min-width: 170px;
+  overflow: hidden;
+  border: 1px solid #c4c7c5;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px #0004;
+}
+
+#gradeimp .gi-menu.gi-visible {
+  display: block;
+}
+
+#gradeimp .gi-menu-opcio {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  background: #fff;
+  color: #1f1f1f;
+  font-size: 13px;
+  text-align: left;
+}
+
+#gradeimp .gi-missatge {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#gradeimp .gi-absents {
+  color: #444746;
+  font-size: 12px;
+}
+
+#gradeimp .gi-absents strong {
+  font-weight: 500;
+}
+
+#gradeimp .gi-peu {
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+  color: #444746;
+  font-size: 11px;
+}
+
+#gradeimp .gi-peu a {
+  color: #0b57d0;
+}

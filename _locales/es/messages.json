@@ -1,0 +1,22 @@
+{
+  "name": {
+    "message": "GradeImp"
+  },
+  "description": {
+    "message": "Pega notas desde Excel o Sheets y las escribe como borrador en la tarea de Classroom abierta."
+  },
+  "ajuda": {
+    "message": "Abre una tarea en Classroom, ve a «Trabajo de los alumnos» y pulsa «Importar notas», a la derecha de la página."
+  },
+  "credit": {
+    "message": "Creado por Ramon Batlle"
+  },
+  "versio": {
+    "message": "Versión $VERSIO$",
+    "placeholders": {
+      "versio": {
+        "content": "$1"
+      }
+    }
+  }
+}

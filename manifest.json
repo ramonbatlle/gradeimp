@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_name__",
+  "version": "0.8.0",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "author": "Ramon Batlle",
+  "homepage_url": "https://www.ramonbatlle.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://classroom.google.com/*"
+      ],
+      "js": [
+        "src/textos.js",
+        "src/noms.js",
+        "src/taula.js",
+        "src/pla.js",
+        "src/classroom.js",
+        "src/dom.js",
+        "src/graella.js",
+        "src/panell.js",
+        "src/inici.js"
+      ],
+      "css": [
+        "src/panell.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "GradeImp",
+    "default_popup": "src/finestra.html"
+  }
+}

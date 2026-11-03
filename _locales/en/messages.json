@@ -1,0 +1,22 @@
+{
+  "name": {
+    "message": "GradeImp"
+  },
+  "description": {
+    "message": "Paste grades from Excel or Sheets and write them as drafts to the open Classroom assignment."
+  },
+  "ajuda": {
+    "message": "Open an assignment in Classroom, go to “Student work” and press “Import grades” on the right of the page."
+  },
+  "credit": {
+    "message": "Created by Ramon Batlle"
+  },
+  "versio": {
+    "message": "Version $VERSIO$",
+    "placeholders": {
+      "versio": {
+        "content": "$1"
+      }
+    }
+  }
+}
