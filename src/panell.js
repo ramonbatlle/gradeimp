@@ -305,7 +305,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
         missatge.textContent = t('taulaBuida');
         return;
       }
-      escriurePortaretalls(entrades.map((entrada) => entrada.notaEscrita).join('\n'), t('notesCopiades', entrades.length));
+      escriurePortaretalls(entrades.map((entrada) => entrada.notaEscrita).join('\n'), t(llistaOrdenadaPerCognoms() ? 'notesCopiades' : 'notesCopiadesOrdena', entrades.length));
     };
 
     const esborrarDeClassroom = async () => {
