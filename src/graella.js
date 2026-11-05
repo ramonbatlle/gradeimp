@@ -20,9 +20,17 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     const casellaCapcalera = crear('input');
     casellaCapcalera.type = 'checkbox';
     etiquetaCapcalera.append(casellaCapcalera, t('filaCapcalera'));
-    element.append(contenidor, etiquetaCapcalera);
+    const pista = crear('div', 'gi-pista', t('pistaGraella'));
+    element.append(pista, contenidor, etiquetaCapcalera);
 
     const estaBuida = () => !files.some((fila) => fila.some(Boolean));
+
+    const actualitzarPista = () => {
+      const buida = estaBuida();
+      pista.classList.toggle('gi-amagada', !buida);
+      const primerCamp = contenidor.querySelector('input[data-fila="0"][data-columna="0"]');
+      if (primerCamp) primerCamp.placeholder = buida ? t('enganxaAqui') : '';
+    };
 
     const ajustarMida = () => {
       const columnes = Math.max(COLUMNES_MINIMES, ...files.map((fila) => fila.length));
@@ -87,6 +95,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
 
       camp.addEventListener('input', () => {
         files[numeroFila][columna] = camp.value;
+        actualitzarPista();
         alCanviar();
         if (numeroFila === files.length - 1 && camp.value) {
           dibuixar();
@@ -141,6 +150,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
       contenidor.replaceChildren(taula);
 
       casellaCapcalera.checked = rols.teCapcalera;
+      actualitzarPista();
       pintarEstats();
       bloquejar(bloquejada);
     };

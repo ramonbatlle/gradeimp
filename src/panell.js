@@ -59,9 +59,6 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     const capcalera = crear('div', 'gi-capcalera');
     capcalera.append(titol, botoTancar);
 
-    const ajuda = crear('details', 'gi-ajuda');
-    ajuda.append(crear('summary', '', t('comFunciona')), crear('div', '', t('ajuda')));
-
     const avisPuntuacio = crear('div', 'gi-avis', t('tascaSensePuntuacio'));
     const missatge = crear('div', 'gi-missatge');
     const llistaAbsents = crear('div', 'gi-absents');
@@ -101,7 +98,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     peu.append(enllac);
 
     panell.append(
-      capcalera, ajuda, avisPuntuacio, graella.element, sobreescriure.etiqueta,
+      capcalera, avisPuntuacio, graella.element, sobreescriure.etiqueta,
       accions, missatge, llistaAbsents, peu,
     );
     arrel.append(panell, pestanya);
@@ -129,7 +126,8 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     const mostrarPla = () => {
       const estats = new Map(pla.map((element) => {
         const parcial = element.parcial ? `→ ${cognomsPrimer(element.alumne.nom)}: ` : '';
-        const tipus = element.retornada && element.estat === 'ok' ? 'avis' : element.estat;
+        const perRevisar = element.estat === 'ok' && (element.retornada ? 'avis' : element.parcial && 'parcial');
+        const tipus = perRevisar || element.estat;
         return [element.numeroFila, { tipus, text: `${parcial}${element.detall}` }];
       }));
       graella.mostrarEstats(estats);
