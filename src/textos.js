@@ -4,6 +4,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   const TEXTOS = {
     "ca": {
       "esborrarClassroom": "Esborra les notes de Classroom",
+      "tascaSensePuntuacio": "Aquesta tasca no té puntuació, per això no s’hi poden importar notes. Per fer-ho, posa-li una puntuació a Classroom i recarrega la pàgina.",
       "confirmarEsborrat": "S’esborraran {0} notes d’aquesta tasca i no es pot desfer. Vols continuar?",
       "senseNotesPerEsborrar": "Aquesta tasca no té notes per esborrar.",
       "esborrant": "Esborrant {0} de {1}…",
@@ -75,6 +76,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     },
     "es": {
       "esborrarClassroom": "Borrar las notas de Classroom",
+      "tascaSensePuntuacio": "Esta tarea no tiene puntuación, por eso no se pueden importar notas. Para hacerlo, asígnale una puntuación en Classroom y recarga la página.",
       "confirmarEsborrat": "Se borrarán {0} notas de esta tarea y no se puede deshacer. ¿Quieres continuar?",
       "senseNotesPerEsborrar": "Esta tarea no tiene notas que borrar.",
       "esborrant": "Borrando {0} de {1}…",
@@ -146,6 +148,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     },
     "en": {
       "esborrarClassroom": "Clear grades in Classroom",
+      "tascaSensePuntuacio": "This assignment has no points, so grades can’t be imported. To import them, give it points in Classroom and reload the page.",
       "confirmarEsborrat": "{0} grades in this assignment will be cleared. This cannot be undone. Continue?",
       "senseNotesPerEsborrar": "This assignment has no grades to clear.",
       "esborrant": "Clearing {0} of {1}…",

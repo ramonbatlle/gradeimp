@@ -244,6 +244,32 @@
   text-align: left;
 }
 
+#gradeimp .gi-avis {
+  display: none;
+  padding: 10px 12px;
+  border: 1px solid #f2c94c;
+  border-radius: 6px;
+  background: #fff8e1;
+  color: #5f4b00;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#gradeimp .gi-avis.gi-visible {
+  display: block;
+}
+
+#gradeimp .gi-sense-puntuacio .gi-graella,
+#gradeimp .gi-sense-puntuacio .gi-opcio,
+#gradeimp .gi-sense-puntuacio .gi-accions {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+#gradeimp .gi-sense-puntuacio button:disabled {
+  opacity: 1;
+}
+
 #gradeimp .gi-missatge {
   font-size: 13px;
   font-weight: 500;

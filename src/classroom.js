@@ -58,6 +58,19 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     return Boolean(etiqueta) && etiqueta.textContent.trim() === '';
   };
 
+  // Una casella buida vol dir que la pàgina encara carrega: sense dades no es pot decidir.
+  const tascaTePuntuacio = () => {
+    const files = filesDeLaTasca();
+    if (files.some((fila) => llegirCasella(fila).maxim !== null)) return true;
+    const carregada = files.length > 0 && files.every((fila) => casellaDeNota(fila)?.textContent.trim());
+    return carregada ? false : null;
+  };
+
+  const tascaSensePuntuacio = async () => {
+    await esperarQue(() => tascaTePuntuacio() !== null);
+    return tascaTePuntuacio() === false;
+  };
+
   const alumnesVisibles = () => {
     const alumnes = new Map();
     filesDeLaTasca().forEach((fila) => {
@@ -170,6 +183,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     esperar,
     tascaActual,
     esPaginaDeEntregues,
+    tascaSensePuntuacio,
     alumnesVisibles,
     carregarAlumnes,
     escriureNota,

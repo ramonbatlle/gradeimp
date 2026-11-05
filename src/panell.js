@@ -9,7 +9,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   const { crearGraella } = GradeImp.graella;
   const {
     esperar, tascaActual, alumnesVisibles, carregarAlumnes,
-    escriureNota, esborrarNota, tancarCampObert, notaActual,
+    escriureNota, esborrarNota, tancarCampObert, notaActual, tascaSensePuntuacio,
   } = GradeImp.classroom;
 
   const ID_ARREL = 'gradeimp';
@@ -42,6 +42,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     let absents = [];
     let enRevisio = false;
     let ocupat = false;
+    let sensePuntuacio = false;
 
     const arrel = crear('div');
     arrel.id = ID_ARREL;
@@ -61,6 +62,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     const ajuda = crear('details', 'gi-ajuda');
     ajuda.append(crear('summary', '', t('comFunciona')), crear('div', '', t('ajuda')));
 
+    const avisPuntuacio = crear('div', 'gi-avis', t('tascaSensePuntuacio'));
     const missatge = crear('div', 'gi-missatge');
     const llistaAbsents = crear('div', 'gi-absents');
 
@@ -99,7 +101,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     peu.append(enllac);
 
     panell.append(
-      capcalera, ajuda, graella.element, sobreescriure.etiqueta,
+      capcalera, ajuda, avisPuntuacio, graella.element, sobreescriure.etiqueta,
       accions, missatge, llistaAbsents, peu,
     );
     arrel.append(panell, pestanya);
@@ -110,9 +112,18 @@ globalThis.GradeImp = globalThis.GradeImp || {};
 
     const marcarOcupat = (valor) => {
       ocupat = valor;
-      graella.bloquejar(valor);
-      sobreescriure.casella.disabled = valor;
-      [botoImportar, botoMostrar, botoCopiar, botoBuidar, botoEsborrar].forEach((boto) => { boto.disabled = valor; });
+      const bloquejat = valor || sensePuntuacio;
+      graella.bloquejar(bloquejat);
+      sobreescriure.casella.disabled = bloquejat;
+      [botoImportar, botoMostrar, botoCopiar, botoBuidar, botoEsborrar].forEach((boto) => { boto.disabled = bloquejat; });
+    };
+
+    const revisarPuntuacio = async () => {
+      sensePuntuacio = await tascaSensePuntuacio();
+      avisPuntuacio.classList.toggle('gi-visible', sensePuntuacio);
+      panell.classList.toggle('gi-sense-puntuacio', sensePuntuacio);
+      if (!ocupat) marcarOcupat(false);
+      return sensePuntuacio;
     };
 
     const mostrarPla = () => {
@@ -217,6 +228,8 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     };
 
     const importar = async () => {
+      if (await revisarPuntuacio()) return;
+
       if (enRevisio && tascaActual() === tascaDelPla) {
         enRevisio = false;
         actualitzarBotons();
@@ -334,7 +347,9 @@ globalThis.GradeImp = globalThis.GradeImp || {};
 
     const tancarMenu = () => menuCopiar.classList.remove('gi-visible');
 
-    pestanya.addEventListener('click', () => panell.classList.toggle('gi-visible'));
+    pestanya.addEventListener('click', () => {
+      if (panell.classList.toggle('gi-visible')) revisarPuntuacio();
+    });
     botoTancar.addEventListener('click', () => panell.classList.remove('gi-visible'));
     botoImportar.addEventListener('click', importar);
     botoMostrar.addEventListener('click', mostrarNotes);
