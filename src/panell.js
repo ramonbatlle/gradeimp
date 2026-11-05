@@ -8,7 +8,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   const { crearPla } = GradeImp.pla;
   const { crearGraella } = GradeImp.graella;
   const {
-    esperar, tascaActual, alumnesVisibles, carregarAlumnes,
+    esperar, tascaActual, llistaOrdenadaPerCognoms, alumnesVisibles, carregarAlumnes,
     escriureNota, esborrarNota, tancarCampObert, notaActual, tascaSensePuntuacio,
   } = GradeImp.classroom;
 
@@ -31,10 +31,11 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     return { etiqueta, casella };
   };
 
-  const ordenarPerCognoms = (alumnes) =>
-    alumnes
-      .map((alumne) => ({ ...alumne, nomOrdenat: cognomsPrimer(alumne.nom) }))
-      .sort((a, b) => a.nomOrdenat.localeCompare(b.nomOrdenat, idioma));
+  const ordenarPerCognoms = (alumnes) => {
+    const ambNom = alumnes.map((alumne) => ({ ...alumne, nomOrdenat: cognomsPrimer(alumne.nom) }));
+    if (llistaOrdenadaPerCognoms()) return ambNom;
+    return ambNom.sort((a, b) => a.nomOrdenat.localeCompare(b.nomOrdenat, idioma));
+  };
 
   const crearPanell = () => {
     let pla = [];

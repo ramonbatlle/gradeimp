@@ -24,6 +24,9 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   const tascaActual = () => location.pathname.match(/\/c\/[^/]+\/a\/[^/]+/)?.[0] ?? null;
   const esPaginaDeEntregues = () => /\/c\/[^/]+\/a\/[^/]+\/submissions\//.test(location.pathname);
 
+  // Classroom coneix els cognoms reals: en aquesta vista, el seu ordre és més fiable que el nostre.
+  const llistaOrdenadaPerCognoms = () => /\/submissions\/flat\/[^/]*sort-last-name/.test(location.pathname);
+
   // Classroom pot conservar amagades les files d'altres tasques ja visitades.
   const filesDeLaTasca = () => {
     const tasca = tascaActual();
@@ -183,6 +186,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
     esperar,
     tascaActual,
     esPaginaDeEntregues,
+    llistaOrdenadaPerCognoms,
     tascaSensePuntuacio,
     alumnesVisibles,
     carregarAlumnes,
