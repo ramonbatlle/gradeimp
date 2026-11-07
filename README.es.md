@@ -62,6 +62,10 @@ Para pasar las pruebas hace falta [Node.js](https://nodejs.org):
 node --test tests/*.test.js
 ```
 
+## Licencia
+
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): se puede usar y adaptar citando al autor, sin fines comerciales y compartiendo los cambios con la misma licencia. Ver [LICENSE](LICENSE).
+
 ## Autor
 
 Ramon Batlle · [www.ramonbatlle.com](https://www.ramonbatlle.com)

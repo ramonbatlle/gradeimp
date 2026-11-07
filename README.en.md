@@ -62,6 +62,10 @@ To run the tests you need [Node.js](https://nodejs.org):
 node --test tests/*.test.js
 ```
 
+## License
+
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): you may use and adapt it with attribution, for non-commercial purposes, sharing changes under the same license. See [LICENSE](LICENSE).
+
 ## Author
 
 Ramon Batlle · [www.ramonbatlle.com](https://www.ramonbatlle.com)
