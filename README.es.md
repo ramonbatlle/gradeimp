@@ -4,6 +4,8 @@
 
 Extensión de Chrome para pasar notas de Excel o Sheets a una tarea que ya existe en Google Classroom, sin crear una nueva.
 
+**[Instala GradeImp desde Chrome Web Store](https://chromewebstore.google.com/detail/gradeimp/bjdjohcckaoicplhkcmlamggpjajajbp)**
+
 ![Panel de GradeImp en Classroom, con alumnos ficticios](docs/gradeimp-exemple-es.png)
 
 *Ejemplo de la extensión en funcionamiento.*
@@ -22,11 +24,17 @@ Además:
 - **Borrar las notas de Classroom** borra todas las notas de la tarea, tras pedir confirmación.
 - Está disponible en catalán, castellano e inglés, según el idioma de Classroom.
 
-## 🚀 Instalación para pruebas
+## 🚀 Instalación
 
-1. Descarga esta carpeta.
+Instálala desde [Chrome Web Store](https://chromewebstore.google.com/detail/gradeimp/bjdjohcckaoicplhkcmlamggpjajajbp). Así se actualiza sola.
+
+Para probar el código:
+
+1. Descarga este repositorio con **Code > Download ZIP** y descomprímelo.
 2. Abre `chrome://extensions` y activa el **Modo de desarrollador**.
 3. Pulsa **Cargar descomprimida** y elige la carpeta.
+
+Si también tienes instalada la versión de la tienda, desactívala mientras haces pruebas.
 
 ## 🔒 Privacidad
 

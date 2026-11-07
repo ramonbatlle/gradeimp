@@ -4,6 +4,8 @@
 
 Chrome extension to copy grades from Excel or Sheets into an assignment that already exists in Google Classroom, without creating a new one.
 
+**[Install GradeImp from the Chrome Web Store](https://chromewebstore.google.com/detail/gradeimp/bjdjohcckaoicplhkcmlamggpjajajbp)**
+
 ![GradeImp panel in Classroom, with fictitious students](docs/gradeimp-exemple-en.png)
 
 *Example of the extension in use.*
@@ -22,11 +24,17 @@ Also:
 - **Clear grades in Classroom** clears all the assignment's grades, after asking for confirmation.
 - It is available in Catalan, Spanish and English, following Classroom's language.
 
-## 🚀 Installation for testing
+## 🚀 Installation
 
-1. Download this folder.
+Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/gradeimp/bjdjohcckaoicplhkcmlamggpjajajbp). It updates automatically.
+
+To try the code:
+
+1. Download this repository with **Code > Download ZIP** and unzip it.
 2. Open `chrome://extensions` and turn on **Developer mode**.
 3. Press **Load unpacked** and choose the folder.
+
+If you also have the store version installed, disable it while testing.
 
 ## 🔒 Privacy
 
