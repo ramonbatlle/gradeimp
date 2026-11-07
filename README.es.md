@@ -4,7 +4,7 @@
 
 Extensión de Chrome para pasar notas de Excel o Sheets a una tarea que ya existe en Google Classroom, sin crear una nueva.
 
-![Panel de GradeImp sobre una página de ejemplo con alumnos ficticios](docs/gradeimp-exemple.png)
+![Panel de GradeImp en Classroom, con alumnos ficticios](docs/gradeimp-exemple-es.png)
 
 *Ejemplo de la extensión en funcionamiento.*
 

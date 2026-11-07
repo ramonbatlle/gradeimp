@@ -4,7 +4,7 @@
 
 Chrome extension to copy grades from Excel or Sheets into an assignment that already exists in Google Classroom, without creating a new one.
 
-![GradeImp panel on an example page with fictitious students](docs/gradeimp-exemple.png)
+![GradeImp panel in Classroom, with fictitious students](docs/gradeimp-exemple-en.png)
 
 *Example of the extension in use.*
 
