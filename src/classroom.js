@@ -1,5 +1,18 @@
 globalThis.GradeImp = globalThis.GradeImp || {};
 
+// Aquest fitxer depèn de com Classroom construeix la pàgina «Treball de l'alumne».
+// Si Google la canvia i GradeImp deixa de funcionar, cal revisar:
+//
+// - Adreça: /c/<classe>/a/<tasca>/submissions/… (tascaActual, esPaginaDeEntregues,
+//   llistaOrdenadaPerCognoms).
+// - Fila de cada alumne: tr[data-student-id] (filesDeLaTasca).
+// - Nom de l'alumne: span amb id acabat en -<id de l'alumne> (nomDeLaFila).
+// - Casella de la nota: td div[data-submission-id][tabindex], amb el text «7,5/10»
+//   (casellaDeNota, llegirCasella).
+// - Camp per escriure la nota: td input[type="text"], que apareix en clicar la casella (campDeNota).
+// - Grups per estat: data-bucket="returned" per a les notes retornades (estaRetornada).
+// - Desar la nota: s'escriu el text al camp i es prem Retorn (introduirText, premerIntro).
+
 (() => {
   const { t, idioma } = GradeImp;
   const { clauDeNom } = GradeImp.noms;

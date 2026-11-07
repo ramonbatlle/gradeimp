@@ -67,7 +67,6 @@ globalThis.GradeImp = globalThis.GradeImp || {};
       "absents": "Alumnes de Classroom que no surten al full:",
       "comprovant": "Comprovant…",
       "resum": "{0} {0|alumne|alumnes} a la pàgina · {1} a punt · {2} {2|omesa|omeses} · {3} {3|error|errors}",
-      "tascaCanviada": "Has canviat de tasca: torna a comprovar.",
       "important": "Important {0} de {1}…",
       "escrita": "Escrita",
       "noMantinguda": "La nota no s’ha mantingut",
@@ -140,7 +139,6 @@ globalThis.GradeImp = globalThis.GradeImp || {};
       "absents": "Alumnos de Classroom que no están en la hoja:",
       "comprovant": "Comprobando…",
       "resum": "{0} {0|alumno|alumnos} en la página · {1} {1|lista|listas} · {2} {2|omitida|omitidas} · {3} {3|error|errores}",
-      "tascaCanviada": "Has cambiado de tarea: vuelve a comprobar.",
       "important": "Importando {0} de {1}…",
       "escrita": "Escrita",
       "noMantinguda": "La nota no se ha mantenido",
@@ -159,8 +157,8 @@ globalThis.GradeImp = globalThis.GradeImp || {};
       "esborrada": "Cleared",
       "noEsborrada": "Could not clear it",
       "esborratFet": "{0} {0|grade|grades} cleared.",
-      "esborratAmbErrors": "{0} {0|grade|grades} cleared, {1} with errors.",
-      "esborratAturat": "Stopped: {0} errors in a row. {1} cleared, {2} with errors.",
+      "esborratAmbErrors": "{0} {0|grade|grades} cleared, {1} with {1|error|errors}.",
+      "esborratAturat": "Stopped: {0} errors in a row. {1} cleared, {2} with {2|error|errors}.",
       "retornadaOmesa": "Grade already returned ({0}): not overwritten",
       "retornadaSubstitueix": "Grade already returned: replaces {0}",
       "revisioParcials": "{0} partial {0|match|matches} (→).",
@@ -213,13 +211,12 @@ globalThis.GradeImp = globalThis.GradeImp || {};
       "absents": "Classroom students not in the sheet:",
       "comprovant": "Checking…",
       "resum": "{0} {0|student|students} on the page · {1} ready · {2} skipped · {3} {3|error|errors}",
-      "tascaCanviada": "You changed assignment: check again.",
       "important": "Importing {0} of {1}…",
       "escrita": "Written",
       "noMantinguda": "The grade did not stay",
-      "aturat": "Stopped: {0} errors in a row. {1} written, {2} with errors, {3} pending.",
+      "aturat": "Stopped: {0} errors in a row. {1} written, {2} with {2|error|errors}, {3} pending.",
       "fet": "{0} {0|grade|grades} written. Review {0|it|them} before returning {0|it|them}.",
-      "fetAmbErrors": "{0} {0|grade|grades} written, {1} with errors. Review {0|it|them} before returning {0|it|them}."
+      "fetAmbErrors": "{0} {0|grade|grades} written, {1} with {1|error|errors}. Review {0|it|them} before returning {0|it|them}."
     }
   };
 
