@@ -1,6 +1,6 @@
 # GradeImp
 
-[Català](README.md) · **Castellano**
+[Català](README.md) · **Castellano** · [English](README.en.md)
 
 Extensión de Chrome para pasar notas de Excel o Sheets a una tarea que ya existe en Google Classroom, sin crear una nueva.
 
