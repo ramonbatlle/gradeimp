@@ -5,7 +5,7 @@ globalThis.GradeImp = globalThis.GradeImp || {};
 //
 // - Adreça: /c/<classe>/a/<tasca>/submissions/… (tascaActual, esPaginaDeEntregues,
 //   llistaOrdenadaPerCognoms).
-// - Fila de cada alumne: tr[data-student-id] (filesDeLaTasca).
+// - Fila de cada alumne: tr[data-student-id] (filesDeLaTasca; si no se'n veu cap, no hi ha panell).
 // - Nom de l'alumne: span amb id acabat en -<id de l'alumne> (nomDeLaFila).
 // - Casella de la nota: td div[data-submission-id][tabindex], amb el text «7,5/10»
 //   (casellaDeNota, llegirCasella).
@@ -35,7 +35,10 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   };
 
   const tascaActual = () => location.pathname.match(/\/c\/[^/]+\/a\/[^/]+/)?.[0] ?? null;
-  const esPaginaDeEntregues = () => /\/c\/[^/]+\/a\/[^/]+\/submissions\//.test(location.pathname);
+  // Quan s'obre el treball d'un alumne, l'adreça continua sent …/submissions/… però la llista
+  // de notes desapareix: el panell només té sentit si la llista es veu.
+  const esPaginaDeEntregues = () => /\/c\/[^/]+\/a\/[^/]+\/submissions\//.test(location.pathname)
+    && filesDeLaTasca().length > 0;
 
   // Classroom coneix els cognoms reals: en aquesta vista, el seu ordre és més fiable que el nostre.
   const llistaOrdenadaPerCognoms = () => /\/submissions\/flat\/[^/]*sort-last-name/.test(location.pathname);
