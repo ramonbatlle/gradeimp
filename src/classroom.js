@@ -55,8 +55,19 @@ globalThis.GradeImp = globalThis.GradeImp || {};
   const nomDeLaFila = (fila) =>
     fila.querySelector(`span[id$="-${fila.dataset.studentId}"]`)?.textContent.trim();
 
+  // Classroom enganxa «15/10» al text per a lectors de pantalla «15 de 10» sense espai:
+  // llegint els trossos de text per separat, el màxim no es confon amb 1015.
+  const textDeLaCasella = (fila) => {
+    const casella = casellaDeNota(fila);
+    if (!casella) return '';
+    const trossos = [];
+    const recorregut = document.createTreeWalker(casella, NodeFilter.SHOW_TEXT);
+    while (recorregut.nextNode()) trossos.push(recorregut.currentNode.nodeValue);
+    return trossos.join(' ').replace(/\u00a0/g, ' ');
+  };
+
   const llegirCasella = (fila) => {
-    const text = casellaDeNota(fila)?.textContent.replace(/ /g, ' ') ?? '';
+    const text = textDeLaCasella(fila);
     const trobat = text.match(/(\d+(?:[.,]\d+)?)?\s*\/\s*(\d+(?:[.,]\d+)?)/);
     const numero = (valor) => (valor ? Number(valor.replace(',', '.')) : null);
     return { nota: numero(trobat?.[1]), maxim: numero(trobat?.[2]) };
